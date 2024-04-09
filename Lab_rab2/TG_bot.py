@@ -16,8 +16,10 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id,"Учиться, учиться и ещё раз учиться")
     elif message.text == "Контакты":
         bot.send_message(message.from_user.id,"Группа в ВК: https://vk.com/omskpoliteh\n Telegram:https://t.me/omgtu_live\n Наш сайт: https://omgtu.ru ",)
+    elif message.text == "/help":
+        bot.send_message(message.from_user.id,"Команды:\nКто ты?\nРасписание\nПреподаватели\nКонтакты\nКак не слететь со стипы?")
     else:
-        bot.send_message(message.from_user.id, "Я тебя не понимаю.")
+        bot.send_message(message.from_user.id, 'Я тебя не понимаю. Напиши"/help"')
 
 
 bot.polling(none_stop=True, interval=0)
