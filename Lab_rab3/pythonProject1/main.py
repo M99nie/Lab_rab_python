@@ -13,9 +13,9 @@ def index():
 def form():
     if request.method == 'POST':
         summ = int(request.form.get('num_1'))
-        procent = int(request.form.get('num_2'))/12
+        procent = (int(request.form.get('num_2'))/1200)
         srok = int(request.form.get('num_3'))
-    return render_template('index.html', ans=summ*(procent+((procent)/(((1+procent)**srok)-1))))
+    return render_template('index.html', ans=int(summ*((procent*((1+procent)**srok))/(((1+procent)**srok)-1))))
 
 
 if __name__ == '__main__':
